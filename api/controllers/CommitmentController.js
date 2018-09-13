@@ -161,8 +161,7 @@ module.exports = {
 		console.log("Called CreateCommitment", req.allParams());
 		var inArray = req.param("inputDate").split("#");
 		console.log("Date=", inArray[0], inArray[1] - 1, inArray[2]);
-		var inDate = new Date(inArray[0], inArray[1] - 1, inArray[2]);
-
+		var inDate = new Date(inArray[0], inArray[1] - 1, inArray[2] ).toString();
 		var today = new Date();
 		
 		console.log("This is the Current Date: " + today);
