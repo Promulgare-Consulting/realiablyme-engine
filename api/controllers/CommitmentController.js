@@ -179,7 +179,7 @@ module.exports = {
 			    		helper_id: req.param("messenger user id"),
 			      		entreprenuer_id: req.param("entrepreneurID"),
 			      		commitmentOffer: req.param("commitmentOffer"),
-			      		commitmentDueDate: inDate.toString(),
+			      		commitmentDueDate: inDate,
 			      		commitmentStatus_id: 2,
 			      		event_id: req.param("eventID")
 					}
