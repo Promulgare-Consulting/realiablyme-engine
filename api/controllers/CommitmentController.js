@@ -184,7 +184,7 @@ module.exports = {
 			      		event_id: req.param("eventID")
 					}
 			    ).fetch();
-				console.log("Verify Commitment:: " + newCommitment)
+				console.log("Verify- entreprenuer_id:: " + newCommitment.entreprenuer_id +" DueDate:: "+newCommitment.commitmentDueDate)
 				var event = await Event.find({where: {id: req.param("eventID")}});
 
 
