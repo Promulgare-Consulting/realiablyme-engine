@@ -161,11 +161,11 @@ module.exports = {
 		console.log("Called CreateCommitment", req.allParams());
 		var inArray = req.param("inputDate").split("#");
 		console.log("Date=", inArray[0], inArray[1] - 1, inArray[2]);
-		var inDate = new Date(inArray[0], inArray[1] - 1, inArray[2] ).toString();
+		var inDate = new Date(inArray[0], inArray[1] - 1, inArray[2] )
 		var today = new Date();
 		
 		console.log("This is the Current Date: " + today);
-		console.log("This is Due Date: "+ inDate)
+		console.log("This is Due Date: "+ inDate +"TypeOf: "+ typeof inDate)
 		
 		
 			// Make sure person exists	
@@ -179,12 +179,12 @@ module.exports = {
 			    		helper_id: req.param("messenger user id"),
 			      		entreprenuer_id: req.param("entrepreneurID"),
 			      		commitmentOffer: req.param("commitmentOffer"),
-			      		commitmentDueDate: inDate,
+			      		commitmentDueDate: inDate.toString(),
 			      		commitmentStatus_id: 2,
 			      		event_id: req.param("eventID")
 					}
 			    ).fetch();
-				console.log("Verify- entreprenuer_id:: " + newCommitment.entreprenuer_id +" DueDate:: "+newCommitment.commitmentDueDate)
+				console.log("Verify- entreprenuer_id:: " + newCommitment.entreprenuer_id +" DueDate:: "+newCommitment.commitmentDueDate +"TypeOf DueDate"+ typeof newCommitment.commitmentDueDate)
 				var event = await Event.find({where: {id: req.param("eventID")}});
 
 
